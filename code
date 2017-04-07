@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int BinaryToDecimal(char buff[])
+{
+	int n=0;
+	int w=1;
+	int res=0;
+	char *p=buff;
+	while(*p=='0'||*p=='1')
+	{
+		p++;
+		n++;
+	}
+	while(n--)
+	{
+		res+=(buff[n]-'0')*w;
+		w*=2;
+	}
+	return res;
+}
+int main()
+{
+	int n;
+	cin>>n;
+	char a[n],b[n];
+	cin>>a>>b;
+	int c=BinaryToDecimal(a);
+	int d=BinaryToDecimal(b);
+	cout<<(c^d);
+} 
